@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>tron</title>
+<script src="jquery.js"></script>
+
+<style type="text/css">
+<!--
+body {
+background-color:c0c0c0;
+
+}
+
+td {
+background-color:ffffff;
+width:10;
+height:10;
+}
+
+.cze {
+background-color:ff0000;
+}
+
+.zie {
+background-color:00ff00;
+}
+
+.nie {
+background-color:0000ff;
+}
+//-->
+</style>
+
+<script language="JavaScript">
+
+<!--
+
+
+function show (){
+last_update = new Date().getTime();
+
+$.get("server2.php", { lastfetch : last_update },  function(data) {
+$("#tabela").html(data);
+});
+
+}
+
+
+
+$(document).keypress(function(e) {
+
+if (e.which != 100) {
+if (e.which == 97) {
+
+$.post("key2.php",{aaa : '1'});
+}
+}
+
+
+if (e.which != 115) {
+if (e.which == 119) {
+
+$.post("key2.php",{aaa : '3'});
+}
+}
+
+
+if (e.which != 97) {
+if (e.which == 100) {
+
+$.post("key2.php",{aaa : '2'});
+}
+}
+
+
+if (e.which != 119) {
+if (e.which == 115) {
+
+$.post("key2.php",{aaa : '4'});
+}
+}
+
+}
+
+);
+window.setInterval('show();', 1000);
+$.post("stul.php",{aaa : 'zeruj'});
+//-->
+</script>
+
+</head>
+<body style="background-image: url('tlo.jpg');background-size: 100%;">
+<div id="tabela"></div>
+<br><br><br>
+<center>
+<input type="button" value="up" onclick="$.post('key2.php',{aaa : '3'});" style="width:200;height:200;"><br>
+<input type="button" value="left" onclick="$.post('key2.php',{aaa : '1'});" style="width:200;height:200;"><input type="button" onclick="$.post('key2.php',{aaa : '2'});" value="right" style="width:200;height:200;"><br>
+<input type="button" value="down" onclick="$.post('key2.php',{aaa : '4'});" style="width:200;height:200;"><br>
+
+
+
+</body>
+</html>
+
+
+
